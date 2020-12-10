@@ -448,7 +448,7 @@ class Agent():
         :return:
         """
         self.target_actor = torch.load('./Models/' + str(episode) + '_target_actor.pt', map_location = self.device)
-        self.target_critic = torch.load('./Models/' + str(episode) + '_target_critic\.pt', map_location = self.device)
+        self.target_critic = torch.load('./Models/' + str(episode) + '_target_critic.pt', map_location = self.device)
         self.actor = torch.load('./Models/' + str(episode) + '_actor.pt', map_location = self.device)
         self.critic = torch.load('./Models/' + str(episode) + '_critic.pt', map_location = self.device)
         utils.hard_update(self.target_actor, self.actor)
