@@ -93,7 +93,7 @@ class Actor(nn.Module):
 		x = F.relu(self.fc1(state))
 		x = F.relu(self.fc2(x))
 		x = F.relu(self.fc3(x))
-		action = torch.softmax(self.fc4(x))
+		action = F.softmax(self.fc4(x))
 		return action
 
 
