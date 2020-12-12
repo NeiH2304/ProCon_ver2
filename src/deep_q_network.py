@@ -3,7 +3,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 import numpy as np
 
-EPS = 0.001
+EPS = 0.1
 
 def fanin_init(size, fanin=None):
 	fanin = fanin or size[0]
