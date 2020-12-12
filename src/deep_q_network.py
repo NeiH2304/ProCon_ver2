@@ -3,7 +3,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 import numpy as np
 
-EPS = 1
+EPS = 0.001
 
 def fanin_init(size, fanin=None):
 	fanin = fanin or size[0]
@@ -35,7 +35,7 @@ class Critic(nn.Module):
 		self.fc2.weight.data = fanin_init(self.fc2.weight.data.size())
 
 		self.fc3 = nn.Linear(256, 1)
-		self.fc3.weight.data.uniform_(-EPS,EPS)
+		self.fc3.weight.data.uniform_(-1,1)
 
 	def forward(self, state, action):
 		"""
